@@ -96,7 +96,7 @@ void processarCenarios(const std::string& filename) {
                         em_cenario = true;
                         conteudo_cenario.clear();  //  Novo cenario será processado
                     } else {
-		                //  Declaração de variáveis para processar o cenário
+		        //  Declaração de variáveis para processar o cenário
                         em_cenario = false;
                         std::istringstream cenarioStream(conteudo_cenario);
                         std::string linha_cenario;
@@ -119,7 +119,7 @@ void processarCenarios(const std::string& filename) {
                                         nome_cenario = conteudo;  // Armazena o nome do cenario
 
                                     } else if (subtagName == "dimensoes") {
-		                                    //  Achar as subtags de <dimensoes> e guardar as informações
+		                        //  Achar as subtags de <dimensoes> e guardar as informações
                                         size_t altura_start = linha_cenario.find("<altura>") + 8;
                                         size_t altura_end = linha_cenario.find("</altura>");
                                         altura = stoi(linha_cenario.substr(altura_start, altura_end - altura_start));
@@ -128,7 +128,7 @@ void processarCenarios(const std::string& filename) {
                                         largura = stoi(linha_cenario.substr(largura_start, largura_end - largura_start));
 
                                     } else if (subtagName == "robo") {
-		                                    //  Achar as subtags de <robo> e guardar as informações
+		                        //  Achar as subtags de <robo> e guardar as informações
                                         size_t xstart = linha_cenario.find("<x>") + 3;
                                         size_t xend = linha_cenario.find("</x>");
                                         xrobo = std::stoi(linha_cenario.substr(xstart, xend - xstart));
@@ -140,8 +140,8 @@ void processarCenarios(const std::string& filename) {
                                     }
                                 } 
                             } else {
-				                            //  Armazenar as linhas da matriz em uma unica
-				                            //  String. as linhas são separads por " ".
+				    //  Armazenar as linhas da matriz em uma unica
+				    //  String. as linhas são separads por " ".
                                     matrizstr += linha_cenario;
                                     matrizstr += " ";
                                 }
@@ -212,5 +212,5 @@ int main() {
 
     processarCenarios(xmlfilename);  //  Se não houver erro, processa os cenários
 
-    return 0;
+    return 0;  //  Finaliza o programa
 }
