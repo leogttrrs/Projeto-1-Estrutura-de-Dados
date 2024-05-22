@@ -1,3 +1,5 @@
+// Copyright [2024] <Leonardo Dias Gutterres>
+
 #include <iostream>
 #include <fstream>
 #include <stack>
